@@ -38,7 +38,7 @@ export class NftItem implements Contract {
             value: toNano("0.01"),
             sendMode: SendMode.PAY_GAS_SEPARATELY,
             body: beginCell()
-                .storeUint(3, 32) // нужно обновить op-code
+                .storeUint(0x10d60a76, 32) // нужно обновить op-code
                 .storeUint(0, 64)
             .endCell(),
         });
