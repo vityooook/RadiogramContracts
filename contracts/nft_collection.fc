@@ -168,9 +168,6 @@ slice calculate_nft_item_address(int wc, cell state_init) {
             sale_x2 += 1;
             last_index += 1;
 
-            builder payload = begin_cell().store_uint(0, 32).store_slice("NFT purchase will be a success ✅");
-            send_message(sender_address, 1000000, payload, 1); ;; message to buyer
-
             raw_reserve(50000000, 0); ;; 0.05 TON
             send_message(owner, 0, null(), 128); ;; Payments to the owner
             save_data();
@@ -181,9 +178,6 @@ slice calculate_nft_item_address(int wc, cell state_init) {
             deploy_nft_item(last_index, nft_item_code, content_item_ticket, sender_address);
             sale_ticket += 1;
             last_index += 1;
-
-            builder payload = begin_cell().store_uint(0, 32).store_slice("NFT purchase will be a success ✅");
-            send_message(sender_address, 1000000, payload, 1); ;; message to buyer
 
             raw_reserve(50000000, 0); ;; 0.05 TON
             send_message(owner, 0, null(), 128); ;; Payments to the owner
